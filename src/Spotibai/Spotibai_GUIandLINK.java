@@ -113,6 +113,7 @@ public class Spotibai_GUIandLINK extends JFrame implements ActionListener {
             if (IndexSelect != -1) {
                 list.remove(IndexSelect);
                 def.removeElementAt(IndexSelect);
+                lblplayingsong.setText("NONE");
 
             }
         } else if (e.getSource() == btnClear) {
@@ -120,7 +121,7 @@ public class Spotibai_GUIandLINK extends JFrame implements ActionListener {
             if (ItemCount > 0) {
                 list.clear();
                 def.clear();
-
+                lblplayingsong.setText("NONE");
             } else {
                 JOptionPane.showMessageDialog(this, "All Cleared");
 
@@ -147,13 +148,13 @@ public class Spotibai_GUIandLINK extends JFrame implements ActionListener {
         } else if (e.getSource() == btnnext) {
             IndexSelect = songlist.getSelectedIndex();
             ItemCount = def.getSize();
-            if (IndexSelect < ItemCount-1) {
+            if (IndexSelect < ItemCount - 1) {
                 IndexSelect++;
                 songlist.setSelectedIndex(IndexSelect);
                 Current = def.getElementAt(IndexSelect);
                 lblplayingsong.setText(Current);
                 System.out.println(IndexSelect);
-                                        System.out.println(ItemCount);
+                System.out.println(ItemCount);
             }
         }
     }
